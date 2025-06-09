@@ -1,3 +1,6 @@
+#![deny(unsafe_code)]
+#![cfg_attr(not(test), no_std)]
+
 use heapless::Vec;
 
 #[derive(Debug, Eq, PartialEq)]

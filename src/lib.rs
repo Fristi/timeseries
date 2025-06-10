@@ -10,7 +10,7 @@ pub struct Series<const N : usize, I, T> {
 }
 
 impl <const N : usize, I : Ord, T : Deviate> Series<N, I, T> {
-    pub fn new(max_deviation: T) -> Series<N, I, T> {
+    pub const fn new(max_deviation: T) -> Series<N, I, T> {
         Series { max_deviation, buckets: Vec::new() }
     }
 

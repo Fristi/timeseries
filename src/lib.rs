@@ -9,6 +9,12 @@ pub struct Series<const N : usize, I, T> {
     pub buckets: Vec<SerieEntry<I, T>, N>
 }
 
+impl <const N : usize, I : Clone, T : Clone> Clone for Series<N, I, T> {
+    fn clone(&self) -> Self {
+        Series { max_deviation: self.max_deviation.clone(), buckets: self.buckets.clone() }
+    }
+}
+
 impl <const N : usize, I : Ord, T : Deviate> Series<N, I, T> {
     pub const fn new(max_deviation: T) -> Series<N, I, T> {
         Series { max_deviation, buckets: Vec::new() }
@@ -71,6 +77,12 @@ struct Range<I> {
     end: Option<I>
 }
 
+impl <I: Clone> Clone for Range<I> {
+    fn clone(&self) -> Self {
+        Range { start: self.start.clone(), end: self.end.clone() }
+    }
+}
+
 impl <I: Ord + Sized> Range<I> {
     pub fn new(start: I) -> Range<I> {
         Range { start, end: None }
@@ -104,6 +116,12 @@ impl Deviate for f64 {
 pub struct SerieEntry<I, T> {
     range: Range<I>,
     value: T
+}
+
+impl <I: Clone, T: Clone> Clone for SerieEntry<I, T> {
+    fn clone(&self) -> Self {
+        SerieEntry { range: self.range.clone(), value: self.value.clone() }
+    }
 }
 
 #[cfg(test)]

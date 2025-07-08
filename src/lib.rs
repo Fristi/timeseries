@@ -73,8 +73,8 @@ impl <const N : usize, I : Ord, T : Deviate> Series<N, I, T> {
 
 #[derive(Debug, Eq, PartialEq)]
 struct Range<I> {
-    start: I,
-    end: Option<I>
+    pub start: I,
+    pub end: Option<I>
 }
 
 impl <I: Clone> Clone for Range<I> {

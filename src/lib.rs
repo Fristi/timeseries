@@ -114,8 +114,8 @@ impl Deviate for f64 {
 
 #[derive(Debug, Eq, PartialEq)]
 pub struct SerieEntry<I, T> {
-    range: Range<I>,
-    value: T
+    pub range: Range<I>,
+    pub value: T
 }
 
 impl <I: Clone, T: Clone> Clone for SerieEntry<I, T> {

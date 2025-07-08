@@ -72,7 +72,7 @@ impl <const N : usize, I : Ord, T : Deviate> Series<N, I, T> {
 }
 
 #[derive(Debug, Eq, PartialEq)]
-struct Range<I> {
+pub struct Range<I> {
     pub start: I,
     pub end: Option<I>
 }

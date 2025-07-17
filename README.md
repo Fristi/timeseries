@@ -2,6 +2,8 @@
 
 A custom deviation-based time series compression library, closely resembling the Swinging Door Compression algorithm. Built for `no_std` environments with predictable memory usage.
 
+![Timeseries Compression Library](/timeseries-logo.jpg)
+
 ## Features
 
 - **No-std compatible**: Works in embedded and constrained environments
